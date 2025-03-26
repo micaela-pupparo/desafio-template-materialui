@@ -124,7 +124,7 @@ export function DashboardLayout({
           /> */}
 
           {/** @slot Workspace popover */}
-          <NavSectionHorizontal data={navData} />
+          <NavSectionHorizontal data={navData} sx={{ marginLeft: 0 }} />
         </>
       ),
       rightArea: (

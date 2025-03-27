@@ -1,4 +1,8 @@
+import { _id } from 'src/_mock/assets';
+
 // ----------------------------------------------------------------------
+
+const MOCK_ID = _id[1];
 
 const ROOTS = {
   AUTH: '/auth',
@@ -40,15 +44,39 @@ export const paths = {
       resetPassword: `${ROOTS.AUTH}/supabase/reset-password`,
     },
   },
+
+  product: {
+    root: `/product`,
+    checkout: `/product/checkout`,
+    details: (id: string) => `/product/${id}`,
+    demo: { details: `/product/${MOCK_ID}` },
+  },
   // DASHBOARD
   dashboard: {
     root: ROOTS.DASHBOARD,
-    two: `${ROOTS.DASHBOARD}/two`,
-    three: `${ROOTS.DASHBOARD}/three`,
-    group: {
-      root: `${ROOTS.DASHBOARD}/group`,
-      five: `${ROOTS.DASHBOARD}/group/five`,
-      six: `${ROOTS.DASHBOARD}/group/six`,
+    // two: `${ROOTS.DASHBOARD}/two`,
+    // three: `${ROOTS.DASHBOARD}/three`,
+    // group: {
+    //   root: `${ROOTS.DASHBOARD}/group`,
+    //   five: `${ROOTS.DASHBOARD}/group/five`,
+    //   six: `${ROOTS.DASHBOARD}/group/six`,
+    // },
+    product: {
+      root: `${ROOTS.DASHBOARD}/product`,
+      new: `${ROOTS.DASHBOARD}/product/new`,
+      details: (id: string) => `${ROOTS.DASHBOARD}/product/${id}`,
+      edit: (id: string) => `${ROOTS.DASHBOARD}/product/${id}/edit`,
+      demo: {
+        details: `${ROOTS.DASHBOARD}/product/${MOCK_ID}`,
+        edit: `${ROOTS.DASHBOARD}/product/${MOCK_ID}/edit`,
+      },
+    },
+    order: {
+      root: `${ROOTS.DASHBOARD}/order`,
+      details: (id: string) => `${ROOTS.DASHBOARD}/order/${id}`,
+      demo: {
+        details: `${ROOTS.DASHBOARD}/order/${MOCK_ID}`,
+      },
     },
   },
 };
